@@ -1,29 +1,43 @@
 <% layout("layouts/boilerplate") -%>
 <body>
-    <h2>Create a New Listing</h2>
-    <form action="/listings" method="post">
-        <div><label for="title" class="form-label">Title</label>
-            <input type="text" placeholder="enter title" id="title" name="listing[title]" class="form-control"></div>
+    
+    <div class="row mb-3">
+       
+        <div class="col-8 offset-2">
+            <h2>Create a New Listing</h2>
+            
+    <br>
+    <form action="/listings" method="post" novalidate class="needs-validation">
+        <div class="mb-3"><label for="title" class="form-label">Title</label>
+            <input type="text" placeholder="enter title" required id="title" name="listing[title]" class="form-control"></div>
         
-       <div><label for="description" class="form-label">Description</label>
-        <textarea name="listing[description]" class="form-control">enter description</textarea>
+       <div class="mb-3"><label for="description"  required class="form-label">Description</label>
+        <textarea name="listing[description]"   required class="form-control">enter description</textarea>
       </div>
-       <div> <label for="image" class="form-label">Image</label>
+       <div class="mb-3"> <label for="image" class="form-label">Image</label>
         <input type="text" name="listing[image]" id="" placeholder="enter image url" class="form-control">
       </div>
-      <div>       <label for="price" class="form-label">Price</label>
-        <input type="number" name="listing[price]" placeholder="enter price" class="form-control">
+    
+        <div class="row">
+
+            <div class="mb-3 col-md-4">  
+                     <label for="price" class="form-label">Price</label>
+                <input type="number" required name="listing[price]" placeholder="90,000" class="form-control">
+                </div>
+            <div class="mb-3 col-md-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" required name="listing[country]" id="" placeholder="India" class="form-control">
+                </div>
         </div>
-    <div><label for="country" class="form-label">Country</label>
-        <input type="text" name="listing[country]" id="" placeholder="enter country name" class="form-control">
-        </div>
- <div>    <label for="location" class="form-label">Location</label>
-    <input type="text" name="listing[location]" placeholder="enter location" class="form-control">
+    
+ <div class="mb-3">    <label for="location" class="form-label">Location</label>
+    <input type="text" required name="listing[location]" placeholder="Doraha,Punjab" class="form-control">
     </div>      
  
         
-    
-        <button class="btn btn-danger">Add</button>
+    <br>
+        <button class="btn btn-danger add-btn">Add</button>
     </form>
-    
+</div>
+</div>
 </body>
